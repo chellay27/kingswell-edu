@@ -40,8 +40,7 @@ next-env.d.ts
 # playwright mcp
 .playwright-mcp/
 
-# screenshots
-*.png
+# screenshots (in .playwright-mcp/ which is already ignored)
 
 # mcp config
 .mcp.json
