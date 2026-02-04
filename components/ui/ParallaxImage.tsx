@@ -34,9 +34,11 @@ export function ParallaxImage({
       const viewportCenter = windowHeight / 2;
       const distanceFromCenter = elementCenter - viewportCenter;
 
-      // Apply parallax offset
+      // Apply parallax offset with clamping to prevent overflow
       const newOffset = distanceFromCenter * parallaxSpeed;
-      setOffset(newOffset);
+      const maxOffset = rect.height * 0.1; // Limit to 10% of container height
+      const clampedOffset = Math.max(-maxOffset, Math.min(maxOffset, newOffset));
+      setOffset(clampedOffset);
     };
 
     // Initial calculation
@@ -56,7 +58,7 @@ export function ParallaxImage({
       <div
         className="absolute inset-0 transition-transform duration-100 ease-out"
         style={{
-          transform: `translateY(${offset}px) scale(1.1)`,
+          transform: `translateY(${offset}px) scale(1.25)`,
         }}
       >
         <Image
