@@ -324,13 +324,13 @@ export default async function HomePage({ params }: PageProps) {
           <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className={cn(
-                'font-display text-3xl md:text-4xl font-semibold',
+                'font-display text-3xl md:text-4xl font-semibold text-accent',
                 isRTL && 'font-arabic'
               )}>
                 {t('trust.title')}
               </h2>
               <p className={cn(
-                'mt-4 text-white/70 text-lg',
+                'mt-4 text-white/80 text-lg',
                 isRTL && 'font-arabic'
               )}>
                 {t('trust.subtitle')}

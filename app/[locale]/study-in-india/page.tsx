@@ -43,18 +43,34 @@ export default async function StudyInIndiaPage({ params }: PageProps) {
       {/* Hero */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
         {/* India themed background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#FF9933]/10 via-transparent to-[#138808]/10" />
-        <div className="absolute top-20 left-0 w-96 h-96 bg-[#FF9933]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-0 w-80 h-80 bg-[#138808]/5 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#8B5A2B]/10 via-transparent to-[#1B4D3E]/10" />
+        <div className="absolute top-20 left-0 w-96 h-96 bg-[#8B5A2B]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-0 w-80 h-80 bg-[#1B4D3E]/5 rounded-full blur-3xl" />
 
         <div className="container-custom relative z-10 text-center">
           {/* India Flag */}
           <div className="inline-block mb-6 animate-fade-up">
-            <svg viewBox="0 0 36 24" className="w-20 h-14 mx-auto" fill="none">
-              <rect y="0" width="36" height="8" fill="#FF9933" />
-              <rect y="8" width="36" height="8" fill="#fff" />
-              <rect y="16" width="36" height="8" fill="#138808" />
-              <circle cx="18" cy="12" r="3" stroke="#000080" strokeWidth="0.5" fill="none" />
+            <svg viewBox="0 0 900 600" className="w-20 h-14 mx-auto" fill="none">
+              <rect y="0" width="900" height="200" fill="#FF9933" />
+              <rect y="200" width="900" height="200" fill="#fff" />
+              <rect y="400" width="900" height="200" fill="#138808" />
+              {/* Ashoka Chakra */}
+              <g transform="translate(450, 300)">
+                <circle r="75" stroke="#000080" strokeWidth="6" fill="none" />
+                <circle r="20" fill="#000080" />
+                {/* 24 spokes */}
+                {[...Array(24)].map((_, i) => (
+                  <line
+                    key={i}
+                    x1="0"
+                    y1="0"
+                    x2={Math.cos((i * 15 - 90) * Math.PI / 180) * 75}
+                    y2={Math.sin((i * 15 - 90) * Math.PI / 180) * 75}
+                    stroke="#000080"
+                    strokeWidth="3"
+                  />
+                ))}
+              </g>
             </svg>
           </div>
 
@@ -114,7 +130,7 @@ export default async function StudyInIndiaPage({ params }: PageProps) {
               >
                 <div className={cn(
                   'inline-flex items-center justify-center w-12 h-12 mb-4',
-                  'bg-[#FF9933]/10 rounded-xl text-[#FF9933]'
+                  'bg-[#8B5A2B]/10 rounded-xl text-[#8B5A2B]'
                 )}>
                   {benefit.icon}
                 </div>
@@ -142,10 +158,10 @@ export default async function StudyInIndiaPage({ params }: PageProps) {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <ScrollReveal delay={100} className="flex-1">
               <div className="relative aspect-square max-w-md mx-auto lg:max-w-none">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#FF9933]/10 to-[#138808]/10 rounded-2xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#8B5A2B]/10 to-[#1B4D3E]/10 rounded-2xl" />
                 <div className="absolute inset-4 bg-white rounded-xl shadow-lg flex items-center justify-center">
                   <div className="text-center p-6">
-                    <GraduationCap className="w-16 h-16 mx-auto mb-4 text-[#138808]" />
+                    <GraduationCap className="w-16 h-16 mx-auto mb-4 text-[#1B4D3E]" />
                     <p className="text-text-muted text-sm">India Programs Image</p>
                   </div>
                 </div>
@@ -169,8 +185,8 @@ export default async function StudyInIndiaPage({ params }: PageProps) {
                       isRTL && 'flex-row-reverse'
                     )}
                   >
-                    <div className="w-10 h-10 bg-[#138808]/10 rounded-full flex items-center justify-center">
-                      <GraduationCap className="w-5 h-5 text-[#138808]" />
+                    <div className="w-10 h-10 bg-[#1B4D3E]/10 rounded-full flex items-center justify-center">
+                      <GraduationCap className="w-5 h-5 text-[#1B4D3E]" />
                     </div>
                     <span className={cn(
                       'text-lg font-medium text-primary',
@@ -187,12 +203,12 @@ export default async function StudyInIndiaPage({ params }: PageProps) {
       </section>
 
       {/* Who Is This For */}
-      <section className="section bg-gradient-to-br from-[#FF9933] to-[#138808] text-white">
+      <section className="section bg-gradient-to-br from-[#8B5A2B] to-[#1B4D3E] text-white">
         <div className="container-custom">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto">
               <h2 className={cn(
-                'font-display text-3xl md:text-4xl font-semibold text-center mb-4',
+                'font-display text-3xl md:text-4xl font-semibold text-center mb-4 text-accent',
                 isRTL && 'font-arabic'
               )}>
                 {t('whoIsFor.title')}
@@ -213,7 +229,7 @@ export default async function StudyInIndiaPage({ params }: PageProps) {
                       isRTL && 'flex-row-reverse text-right'
                     )}
                   >
-                    <CheckCircle className="w-6 h-6 text-white flex-shrink-0" />
+                    <CheckCircle className="w-6 h-6 text-accent flex-shrink-0" />
                     <span className={cn(isRTL && 'font-arabic')}>
                       {t(`whoIsFor.items.${item}`)}
                     </span>
@@ -229,7 +245,7 @@ export default async function StudyInIndiaPage({ params }: PageProps) {
       <section className="section">
         <div className="container-custom">
           <ScrollReveal>
-            <div className="max-w-2xl mx-auto text-center bg-gradient-to-br from-[#138808] to-[#138808]/90 rounded-2xl p-10 md:p-16 shadow-xl">
+            <div className="max-w-2xl mx-auto text-center bg-gradient-to-br from-[#1B4D3E] to-[#163D32] rounded-2xl p-10 md:p-16 shadow-xl">
               <h2 className={cn(
                 'font-display text-3xl md:text-4xl font-bold text-white mb-4',
                 isRTL && 'font-arabic'

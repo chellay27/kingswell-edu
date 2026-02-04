@@ -192,13 +192,13 @@ export default async function StudyInUKPage({ params }: PageProps) {
           <ScrollReveal>
             <div className="max-w-3xl mx-auto">
               <h2 className={cn(
-                'font-display text-3xl md:text-4xl font-semibold text-center mb-4',
+                'font-display text-3xl md:text-4xl font-semibold text-center mb-4 text-accent',
                 isRTL && 'font-arabic'
               )}>
                 {t('whoIsFor.title')}
               </h2>
               <p className={cn(
-                'text-white/70 text-center mb-10',
+                'text-white/80 text-center mb-10',
                 isRTL && 'font-arabic'
               )}>
                 {t('whoIsFor.intro')}

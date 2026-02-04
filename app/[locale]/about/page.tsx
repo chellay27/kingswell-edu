@@ -137,7 +137,7 @@ export default async function AboutPage({ params }: PageProps) {
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center">
               <h2 className={cn(
-                'font-display text-3xl md:text-4xl font-semibold mb-6',
+                'font-display text-3xl md:text-4xl font-semibold mb-6 text-accent',
                 isRTL && 'font-arabic'
               )}>
                 {t('why.title')}
