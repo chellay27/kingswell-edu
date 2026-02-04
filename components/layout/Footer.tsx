@@ -30,52 +30,44 @@ export function Footer() {
       {/* Main Footer */}
       <div className="container-custom py-16">
         <div className={cn(
-          'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8',
+          'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.3fr] gap-10 lg:gap-6',
           isRTL && 'text-right'
         )}>
           {/* Brand Column */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6">
-              <div className="flex items-center gap-3">
-                <div className="relative w-12 h-12 bg-white rounded-lg p-1">
-                  <Image
-                    src="/logo/logo.png"
-                    alt="Kingswell Education"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <div>
-                  <span className={cn(
-                    'font-display text-lg font-semibold block leading-tight',
-                    isRTL && 'font-arabic'
-                  )}>
-                    Kingswell
-                  </span>
-                  <span className={cn(
-                    'text-xs text-white/70 tracking-wide',
-                    isRTL && 'font-arabic'
-                  )}>
-                    Education
-                  </span>
-                </div>
+          <div className="lg:col-span-1 lg:pe-6">
+            <Link href="/" className="inline-flex items-center gap-3 mb-6">
+              <div className="relative w-12 h-12 bg-white rounded-lg p-1 flex-shrink-0">
+                <Image
+                  src="/logo/logo.png"
+                  alt="Kingswell Education"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <div className="leading-none">
+                <span className={cn(
+                  'font-display text-xl font-semibold text-accent whitespace-nowrap block',
+                  isRTL && 'font-arabic'
+                )}>
+                  Kingswell Education
+                </span>
+                <span className={cn(
+                  'text-xs text-white/60 tracking-wide mt-1 block',
+                  isRTL && 'font-arabic'
+                )}>
+                  {t('tagline')}
+                </span>
               </div>
             </Link>
-            <p className="text-white/70 text-sm leading-relaxed mb-6">
+            <p className="text-white/70 text-sm leading-relaxed max-w-[400px]">
               {t('description')}
-            </p>
-            <p className={cn(
-              'inline-block px-4 py-2 bg-white/10 rounded-full text-accent text-sm font-medium',
-              isRTL && 'font-arabic'
-            )}>
-              {t('tagline')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className={cn(
-              'font-display text-lg font-semibold mb-6',
+              'text-sm font-medium mb-3 text-white/80 uppercase tracking-wider',
               isRTL && 'font-arabic'
             )}>
               {t('quickLinks')}
@@ -97,7 +89,7 @@ export function Footer() {
           {/* Programs */}
           <div>
             <h3 className={cn(
-              'font-display text-lg font-semibold mb-6',
+              'text-sm font-medium mb-3 text-white/80 uppercase tracking-wider',
               isRTL && 'font-arabic'
             )}>
               {t('programs')}
@@ -119,7 +111,7 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h3 className={cn(
-              'font-display text-lg font-semibold mb-6',
+              'text-sm font-medium mb-3 text-white/80 uppercase tracking-wider',
               isRTL && 'font-arabic'
             )}>
               {t('contact')}
