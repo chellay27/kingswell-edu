@@ -11,7 +11,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { cn, getWhatsAppLink } from '@/lib/utils';
-import { ScrollReveal, StaggerReveal, ServiceCard, SectionTitle } from '@/components/ui';
+import { ScrollReveal, StaggerReveal, ServiceCard, SectionTitle, ParallaxImage } from '@/components/ui';
 import { locales } from '@/i18n/request';
 
 export function generateStaticParams() {
@@ -140,11 +140,11 @@ export default async function HomePage({ params }: PageProps) {
 
                 {/* Hero Image */}
                 <div className="relative h-full rounded-xl overflow-hidden shadow-xl transition-all duration-500 group-hover:shadow-2xl">
-                  <Image
+                  <ParallaxImage
                     src="/images/hero-graduates.webp"
                     alt="Professional graduates celebrating their achievement"
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.08]"
+                    className="transition-transform duration-700 group-hover:scale-[1.08]"
+                    parallaxSpeed={0.1}
                     priority
                   />
                   {/* Gradient overlay for text readability */}

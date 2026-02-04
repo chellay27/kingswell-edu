@@ -4,3 +4,4 @@ export { SectionTitle, PageHero } from './SectionTitle';
 export { ScrollReveal, StaggerReveal } from './ScrollReveal';
 export { Accordion, FAQCategories } from './Accordion';
 export { ContactForm } from './ContactForm';
+export { ParallaxImage } from './ParallaxImage';
