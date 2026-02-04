@@ -131,24 +131,24 @@ export default async function HomePage({ params }: PageProps) {
 
             {/* Hero Image */}
             <div className="relative flex-1">
-              <div className="relative aspect-[4/3] animate-fade-up delay-200">
+              <div className="relative aspect-[4/3] animate-fade-up delay-200 group cursor-pointer">
                 {/* Decorative frame */}
                 <div className={cn(
-                  'absolute -inset-4 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl',
+                  'absolute -inset-4 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl transition-transform duration-500 group-hover:scale-105',
                   isRTL ? '-rotate-2' : 'rotate-2'
                 )} />
 
                 {/* Hero Image */}
-                <div className="relative h-full rounded-xl overflow-hidden shadow-xl">
+                <div className="relative h-full rounded-xl overflow-hidden shadow-xl transition-all duration-500 group-hover:shadow-2xl">
                   <Image
                     src="/images/hero-graduates.webp"
                     alt="Professional graduates celebrating their achievement"
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                     priority
                   />
                   {/* Gradient overlay for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 via-transparent to-transparent transition-opacity duration-500 group-hover:opacity-80" />
                 </div>
               </div>
             </div>

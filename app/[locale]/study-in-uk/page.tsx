@@ -173,14 +173,14 @@ export default async function StudyInUKPage({ params }: PageProps) {
             </ScrollReveal>
 
             <ScrollReveal delay={100} className="flex-1">
-              <div className="relative aspect-square max-w-md mx-auto lg:max-w-none">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#012169]/10 to-[#C8102E]/10 rounded-2xl" />
-                <div className="absolute inset-4 bg-white rounded-xl shadow-lg overflow-hidden">
+              <div className="relative aspect-square max-w-md mx-auto lg:max-w-none group cursor-pointer">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#012169]/10 to-[#C8102E]/10 rounded-2xl transition-transform duration-500 group-hover:scale-105" />
+                <div className="absolute inset-4 bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 group-hover:shadow-2xl group-hover:inset-2">
                   <Image
                     src="/images/uk-programs.webp"
                     alt="UK academic programs - books, graduation cap and diploma"
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
               </div>
