@@ -134,7 +134,7 @@ export default async function HomePage({ params }: PageProps) {
               <div className="relative aspect-[4/3] animate-fade-up delay-200 group cursor-pointer">
                 {/* Decorative frame */}
                 <div className={cn(
-                  'absolute -inset-4 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]',
+                  'absolute -inset-4 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl transition-transform duration-500 group-hover:scale-[1.01]',
                   isRTL ? '-rotate-2' : 'rotate-2'
                 )} />
 

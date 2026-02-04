@@ -159,7 +159,7 @@ export default async function StudyInIndiaPage({ params }: PageProps) {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             <ScrollReveal delay={100} className="flex-1">
               <div className="relative aspect-square max-w-md mx-auto lg:max-w-none group cursor-pointer">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#8B5A2B]/10 to-[#1B4D3E]/10 rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#8B5A2B]/10 to-[#1B4D3E]/10 rounded-2xl transition-transform duration-500 group-hover:scale-[1.01]" />
                 <div className="absolute inset-4 bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-500 group-hover:shadow-2xl group-hover:inset-2">
                   <Image
                     src="/images/india-programs.webp"
