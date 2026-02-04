@@ -134,7 +134,7 @@ export default async function HomePage({ params }: PageProps) {
               <div className="relative aspect-[4/3] animate-fade-up delay-200 group cursor-pointer">
                 {/* Decorative frame */}
                 <div className={cn(
-                  'absolute -inset-4 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl transition-transform duration-500 group-hover:scale-105',
+                  'absolute -inset-4 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl transition-transform duration-500 group-hover:scale-[1.02]',
                   isRTL ? '-rotate-2' : 'rotate-2'
                 )} />
 
@@ -144,7 +144,7 @@ export default async function HomePage({ params }: PageProps) {
                     src="/images/hero-graduates.webp"
                     alt="Professional graduates celebrating their achievement"
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.08]"
                     priority
                   />
                   {/* Gradient overlay for text readability */}
