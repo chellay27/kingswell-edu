@@ -34,17 +34,14 @@ export function ContactForm() {
     setStatus('loading');
 
     try {
-      // Simulate form submission
-      // In production, this would send to Google Sheets via Apps Script
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const response = await fetch(process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL!, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-      // Here you would normally do:
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData),
-      // });
-
+      // With no-cors mode, we can't read the response, so we assume success
       setStatus('success');
       setFormData({
         name: '',
