@@ -1,0 +1,360 @@
+{
+  "metadata": {
+    "title": "Kingswell Education | UK & India Degrees for Qatar Professionals",
+    "description": "Expert guidance for working professionals in Qatar seeking Bachelor's, Master's, and Doctorate degrees from internationally recognized UK and Indian universities."
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "whatsappChat": "Chat on WhatsApp",
+    "freeConsultation": "Free Consultation",
+    "explorePrograms": "Explore Programs",
+    "startJourney": "Start Your Journey",
+    "viewAll": "View All",
+    "readMore": "Read More"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "studyUK": "Study in UK",
+    "studyIndia": "Study in India",
+    "contact": "Contact",
+    "faqs": "FAQs",
+    "testimonials": "Testimonials"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Education Without Boundaries",
+      "title": "Advance Your Career with a UK or India Degree",
+      "subtitle": "Expert guidance for working professionals in Qatar seeking Bachelor's, Master's, and Doctorate degrees from internationally recognized universities.",
+      "cta": "Start Your Journey",
+      "ctaSecondary": "Explore Programs"
+    },
+    "services": {
+      "title": "How We Help You Succeed",
+      "subtitle": "Comprehensive support at every stage of your educational journey",
+      "items": {
+        "counseling": {
+          "title": "Career Counseling",
+          "description": "Not sure which path to take? We assess your background, goals, and schedule to recommend the perfect program for your career."
+        },
+        "selection": {
+          "title": "Course Selection",
+          "description": "Choose from hundreds of accredited programs. We match you with universities that fit your qualifications and aspirations."
+        },
+        "application": {
+          "title": "Application Support",
+          "description": "From document verification to application submission, we handle the paperwork so you can focus on your career."
+        },
+        "guidance": {
+          "title": "Ongoing Guidance",
+          "description": "Our support doesn't end at admission. We're with you throughout your academic journey."
+        }
+      }
+    },
+    "destinations": {
+      "title": "Choose Your Path",
+      "subtitle": "Two exceptional destinations for your educational goals",
+      "uk": {
+        "title": "Study in UK",
+        "description": "World-renowned universities. Globally recognized degrees. Flexible programs designed for working professionals.",
+        "cta": "Explore UK Programs"
+      },
+      "india": {
+        "title": "Study in India",
+        "description": "Quality education at accessible costs. Accredited universities with programs tailored for international students.",
+        "cta": "Explore India Programs"
+      }
+    },
+    "trust": {
+      "title": "Why Choose Kingswell Education?",
+      "subtitle": "Your trusted partner for international education",
+      "items": {
+        "personalized": "Personalized guidance from application to graduation",
+        "accredited": "Access to accredited UK and Indian universities",
+        "flexible": "Programs designed for busy professionals",
+        "transparent": "Transparent process with no hidden fees",
+        "free": "Free initial consultation"
+      }
+    },
+    "cta": {
+      "title": "Ready to Take the Next Step?",
+      "subtitle": "Start with a free consultation. Tell us about your goals, and we'll show you the path forward.",
+      "button": "Chat on WhatsApp"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Kingswell Education",
+      "subtitle": "Your trusted partner for international education in Qatar"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": "At Kingswell Education, we believe that quality education should be accessible to everyone. We help working professionals in Qatar unlock new career opportunities through internationally recognized degrees from the UK and India."
+    },
+    "approach": {
+      "title": "Our Approach",
+      "intro": "We understand that pursuing higher education while working is challenging. That's why we offer:",
+      "items": {
+        "personalized": {
+          "title": "Personalized Guidance",
+          "description": "Every student is unique. We take time to understand your goals, schedule, and aspirations."
+        },
+        "support": {
+          "title": "End-to-End Support",
+          "description": "From choosing the right program to submitting your application, we're with you at every step."
+        },
+        "honest": {
+          "title": "Honest Advice",
+          "description": "We only recommend programs that genuinely fit your needs. No pressure, no hidden agendas."
+        },
+        "partnership": {
+          "title": "Ongoing Partnership",
+          "description": "Our relationship doesn't end at admission. We support you throughout your studies."
+        }
+      }
+    },
+    "why": {
+      "title": "Why We Exist",
+      "content": "Many professionals in Qatar want to advance their careers but don't know where to start. The process of applying to international universities can be overwhelming – different requirements, complex paperwork, and countless options. We simplify this journey, making quality education achievable for busy professionals like you."
+    }
+  },
+  "studyUK": {
+    "hero": {
+      "title": "Study in the United Kingdom",
+      "subtitle": "World-class education from prestigious British universities"
+    },
+    "intro": {
+      "content": "The UK is home to some of the world's most respected universities. A British degree opens doors globally, signaling quality and credibility to employers everywhere. Our UK programs are specifically designed for working professionals who want to advance without putting their careers on hold."
+    },
+    "benefits": {
+      "title": "Why Choose UK?",
+      "items": {
+        "recognition": {
+          "title": "Global Recognition",
+          "description": "UK degrees are respected by employers worldwide"
+        },
+        "flexible": {
+          "title": "Flexible Programs",
+          "description": "Online and blended learning options for busy professionals"
+        },
+        "quality": {
+          "title": "Quality Assurance",
+          "description": "All universities are accredited and internationally recognized"
+        },
+        "career": {
+          "title": "Career Advancement",
+          "description": "UK qualifications can significantly boost your career prospects"
+        }
+      }
+    },
+    "programs": {
+      "title": "Programs Available",
+      "items": {
+        "bachelors": "Bachelor's Degrees",
+        "masters": "Master's Degrees (MBA, MSc, MA)",
+        "doctorate": "Doctorate Programs (PhD, DBA)",
+        "professional": "Professional Certifications"
+      }
+    },
+    "whoIsFor": {
+      "title": "Who Is This For?",
+      "intro": "UK programs are ideal for professionals who:",
+      "items": {
+        "global": "Want a globally recognized qualification",
+        "advancement": "Seek career advancement or transition",
+        "flexible": "Prefer flexible learning alongside work",
+        "prestige": "Value prestige and quality education"
+      }
+    },
+    "cta": {
+      "title": "Interested in UK Programs?",
+      "subtitle": "Let's discuss which UK program matches your goals.",
+      "button": "Get Free Consultation"
+    }
+  },
+  "studyIndia": {
+    "hero": {
+      "title": "Study in India",
+      "subtitle": "Quality education at accessible costs"
+    },
+    "intro": {
+      "content": "India offers excellent educational opportunities with universities known for strong academic programs and practical curriculum. For professionals seeking quality education at reasonable costs, India provides a compelling alternative with flexible programs designed for working students."
+    },
+    "benefits": {
+      "title": "Why Choose India?",
+      "items": {
+        "affordable": {
+          "title": "Affordable Excellence",
+          "description": "Quality education without the high costs"
+        },
+        "accredited": {
+          "title": "Accredited Programs",
+          "description": "Universities recognized by UGC, AICTE, and international bodies"
+        },
+        "practical": {
+          "title": "Practical Curriculum",
+          "description": "Programs focused on real-world application"
+        },
+        "flexible": {
+          "title": "Flexible Schedules",
+          "description": "Designed for working professionals"
+        }
+      }
+    },
+    "programs": {
+      "title": "Programs Available",
+      "items": {
+        "bachelors": "Bachelor's Degrees",
+        "masters": "Master's Degrees (MBA, MCA, MA)",
+        "doctorate": "Doctorate Programs",
+        "professional": "Professional Diplomas"
+      }
+    },
+    "whoIsFor": {
+      "title": "Who Is This For?",
+      "intro": "India programs are ideal for professionals who:",
+      "items": {
+        "affordable": "Want quality education at accessible prices",
+        "practical": "Seek practical, career-focused programs",
+        "flexible": "Need flexibility to balance work and study",
+        "fundamentals": "Value strong academic fundamentals"
+      }
+    },
+    "cta": {
+      "title": "Interested in India Programs?",
+      "subtitle": "Let's find the right Indian university for you.",
+      "button": "Get Free Consultation"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Get in Touch",
+      "subtitle": "We're here to help you start your educational journey"
+    },
+    "methods": {
+      "whatsapp": {
+        "title": "WhatsApp",
+        "subtitle": "Chat with us directly for quick responses",
+        "button": "Message on WhatsApp"
+      },
+      "phone": {
+        "title": "Phone",
+        "subtitle": "Call us during business hours"
+      },
+      "email": {
+        "title": "Email",
+        "subtitle": "Send us a detailed inquiry"
+      },
+      "visit": {
+        "title": "Visit Us",
+        "subtitle": "Meet us in person"
+      }
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "name": "Full Name",
+      "namePlaceholder": "Enter your full name",
+      "phone": "Phone Number",
+      "phonePlaceholder": "Enter your phone number",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "interest": "Course Interest",
+      "interestPlaceholder": "Select your interest",
+      "interestOptions": {
+        "bachelors": "Bachelor's Degree",
+        "masters": "Master's Degree",
+        "doctorate": "Doctorate",
+        "notSure": "Not Sure Yet"
+      },
+      "message": "Message (Optional)",
+      "messagePlaceholder": "Tell us about your goals...",
+      "submit": "Send Inquiry",
+      "success": "Thank you! We'll contact you within 24 hours.",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "faqs": {
+    "hero": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to common questions about our services"
+    },
+    "categories": {
+      "eligibility": "Eligibility",
+      "process": "Process",
+      "programs": "Programs",
+      "support": "Support"
+    },
+    "items": {
+      "qualifications": {
+        "question": "What qualifications do I need to apply?",
+        "answer": "Requirements vary by program. Generally, you need the previous level of education completed (e.g., Bachelor's for Master's programs). We'll assess your specific qualifications during your free consultation."
+      },
+      "experience": {
+        "question": "Can I apply if I've been out of education for many years?",
+        "answer": "Yes! Many of our programs welcome experienced professionals. Your work experience can often be counted as valuable qualification."
+      },
+      "exams": {
+        "question": "Do I need to take any entrance exams?",
+        "answer": "This depends on the program. Some require tests like IELTS for English proficiency. We'll guide you through any requirements."
+      },
+      "timeline": {
+        "question": "How long does the application process take?",
+        "answer": "Typically 2-4 weeks from initial consultation to application submission. University response times vary."
+      },
+      "documents": {
+        "question": "What documents do I need?",
+        "answer": "Usually: academic transcripts, passport copy, CV/resume, and reference letters. We provide a complete checklist based on your chosen program."
+      },
+      "verification": {
+        "question": "Do you help with document verification?",
+        "answer": "Yes, we guide you through the entire documentation process and verify everything before submission."
+      },
+      "workStudy": {
+        "question": "Can I work while studying?",
+        "answer": "Our programs are specifically designed for working professionals. Most offer flexible online or blended learning."
+      },
+      "recognition": {
+        "question": "Are the degrees recognized in Qatar?",
+        "answer": "Yes, we only work with accredited universities whose degrees are recognized internationally."
+      },
+      "difference": {
+        "question": "What's the difference between UK and India programs?",
+        "answer": "UK programs offer global prestige and recognition. India programs offer quality education at more accessible costs. We'll help you choose based on your goals and budget."
+      },
+      "afterAdmission": {
+        "question": "What support do you provide after admission?",
+        "answer": "We stay connected throughout your studies, helping with any issues and ensuring you have what you need to succeed."
+      },
+      "freeConsultation": {
+        "question": "Is the initial consultation really free?",
+        "answer": "Yes, your first consultation is completely free with no obligations. We'll assess your background and discuss options."
+      },
+      "fees": {
+        "question": "What are your fees?",
+        "answer": "Our service fees depend on the program. We're transparent about all costs during your consultation – no hidden charges."
+      }
+    }
+  },
+  "testimonials": {
+    "hero": {
+      "title": "Success Stories",
+      "subtitle": "Hear from professionals who achieved their educational goals"
+    },
+    "placeholder": {
+      "title": "Your Success Story Could Be Here",
+      "content": "We're just getting started, and we can't wait to help you write your own success story. Be among our first students and join a community of ambitious professionals.",
+      "cta": "Start Your Journey"
+    }
+  },
+  "footer": {
+    "tagline": "Education Without Boundaries",
+    "description": "Helping working professionals in Qatar achieve their educational goals through accredited UK and Indian universities.",
+    "quickLinks": "Quick Links",
+    "programs": "Programs",
+    "contact": "Contact",
+    "copyright": "© {year} Kingswell Education. All rights reserved.",
+    "location": "Qatar"
+  }
+}
