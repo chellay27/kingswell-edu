@@ -13,7 +13,6 @@ const navItems = [
   { href: '/study-in-uk', labelKey: 'studyUK' },
   { href: '/study-in-india', labelKey: 'studyIndia' },
   { href: '/faqs', labelKey: 'faqs' },
-  { href: '/contact', labelKey: 'contact' },
 ];
 
 export function Header() {
@@ -53,6 +52,18 @@ export function Header() {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <header
       className={cn(
@@ -64,8 +75,8 @@ export function Header() {
     >
       <nav className="container-custom flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12 transition-transform duration-300 group-hover:scale-105 flex-shrink-0">
             <Image
               src="/logo/logo.png"
               alt="Kingswell Education"
@@ -74,20 +85,12 @@ export function Header() {
               priority
             />
           </div>
-          <div className={cn('hidden sm:block', isRTL && 'text-right')}>
-            <span className={cn(
-              'font-display text-lg font-semibold text-primary block leading-tight',
-              isRTL && 'font-arabic'
-            )}>
-              Kingswell
-            </span>
-            <span className={cn(
-              'text-xs text-text-muted tracking-wide',
-              isRTL && 'font-arabic'
-            )}>
-              Education
-            </span>
-          </div>
+          <span className={cn(
+            'font-display text-base sm:text-xl font-semibold text-primary whitespace-nowrap',
+            isRTL && 'font-arabic'
+          )}>
+            Kingswell Education
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -190,39 +193,98 @@ export function Header() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Full Page */}
       <div
         className={cn(
-          'lg:hidden fixed inset-x-0 top-[72px] bg-white shadow-lg',
-          'transition-all duration-300 ease-out-expo overflow-hidden',
-          isMobileMenuOpen ? 'max-h-[calc(100vh-72px)] opacity-100' : 'max-h-0 opacity-0'
+          'lg:hidden fixed inset-0 bg-cream z-40',
+          'transition-all duration-500 ease-out',
+          isMobileMenuOpen
+            ? 'opacity-100 pointer-events-auto'
+            : 'opacity-0 pointer-events-none'
         )}
       >
-        <div className={cn('container-custom py-6 space-y-4', isRTL && 'text-right')}>
-          {navItems.map((item, index) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                'block py-3 px-4 text-lg font-medium rounded-lg',
-                'transition-all duration-200',
-                pathname === item.href
-                  ? 'bg-primary text-white'
-                  : 'text-primary hover:bg-cream'
-              )}
-              style={{ animationDelay: `${index * 50}ms` }}
-            >
-              {t(item.labelKey)}
-            </Link>
-          ))}
-          <div className="pt-4 border-t border-border">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute top-20 right-10 w-64 h-64 bg-primary rounded-full blur-3xl" />
+          <div className="absolute bottom-32 left-10 w-48 h-48 bg-accent rounded-full blur-3xl" />
+        </div>
+
+        <div className={cn(
+          'relative h-full flex flex-col justify-center items-center px-8',
+          isRTL && 'text-right'
+        )}>
+          {/* Logo in center top */}
+          <div className="absolute top-24 left-1/2 -translate-x-1/2">
+            <div className="relative w-16 h-16 opacity-20">
+              <Image
+                src="/logo/logo.png"
+                alt=""
+                fill
+                className="object-contain"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+
+          {/* Navigation Links */}
+          <nav className="flex flex-col items-center gap-2">
+            {navItems.map((item, index) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  'relative py-3 px-6 text-2xl font-display font-semibold',
+                  'transition-all duration-300',
+                  pathname === item.href
+                    ? 'text-accent'
+                    : 'text-primary hover:text-accent',
+                  isMobileMenuOpen && 'animate-fade-up'
+                )}
+                style={{
+                  animationDelay: `${index * 80}ms`,
+                  animationFillMode: 'both'
+                }}
+              >
+                {t(item.labelKey)}
+                {pathname === item.href && (
+                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-accent rounded-full" />
+                )}
+              </Link>
+            ))}
+          </nav>
+
+          {/* CTA Button */}
+          <div
+            className={cn(
+              'mt-12',
+              isMobileMenuOpen && 'animate-fade-up'
+            )}
+            style={{
+              animationDelay: `${navItems.length * 80 + 100}ms`,
+              animationFillMode: 'both'
+            }}
+          >
             <Link
               href="/contact"
-              className="btn-primary w-full text-center"
+              className="btn-primary text-lg px-10 py-4"
             >
               {t('contact')}
             </Link>
           </div>
+
+          {/* Bottom tagline */}
+          <p
+            className={cn(
+              'absolute bottom-12 text-sm text-text-muted/60 font-medium tracking-wide',
+              isMobileMenuOpen && 'animate-fade-up'
+            )}
+            style={{
+              animationDelay: `${navItems.length * 80 + 200}ms`,
+              animationFillMode: 'both'
+            }}
+          >
+            Education Without Boundaries
+          </p>
         </div>
       </div>
     </header>
