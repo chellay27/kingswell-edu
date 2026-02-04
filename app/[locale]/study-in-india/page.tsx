@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import Image from 'next/image';
 import { Wallet, Award, BookOpen, Clock, GraduationCap, CheckCircle } from 'lucide-react';
 import { cn, getWhatsAppLink } from '@/lib/utils';
 import { PageHero, ScrollReveal, StaggerReveal, SectionTitle } from '@/components/ui';
@@ -159,11 +160,13 @@ export default async function StudyInIndiaPage({ params }: PageProps) {
             <ScrollReveal delay={100} className="flex-1">
               <div className="relative aspect-square max-w-md mx-auto lg:max-w-none">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#8B5A2B]/10 to-[#1B4D3E]/10 rounded-2xl" />
-                <div className="absolute inset-4 bg-white rounded-xl shadow-lg flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <GraduationCap className="w-16 h-16 mx-auto mb-4 text-[#1B4D3E]" />
-                    <p className="text-text-muted text-sm">India Programs Image</p>
-                  </div>
+                <div className="absolute inset-4 bg-white rounded-xl shadow-lg overflow-hidden">
+                  <Image
+                    src="/images/india-programs.webp"
+                    alt="India academic programs - professional certificates and credentials"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </ScrollReveal>

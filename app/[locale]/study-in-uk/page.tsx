@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import Image from 'next/image';
 import { Globe, Clock, Award, TrendingUp, GraduationCap, CheckCircle } from 'lucide-react';
 import { cn, getWhatsAppLink } from '@/lib/utils';
 import { PageHero, ScrollReveal, StaggerReveal, SectionTitle } from '@/components/ui';
@@ -174,11 +175,13 @@ export default async function StudyInUKPage({ params }: PageProps) {
             <ScrollReveal delay={100} className="flex-1">
               <div className="relative aspect-square max-w-md mx-auto lg:max-w-none">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#012169]/10 to-[#C8102E]/10 rounded-2xl" />
-                <div className="absolute inset-4 bg-white rounded-xl shadow-lg flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <GraduationCap className="w-16 h-16 mx-auto mb-4 text-[#012169]" />
-                    <p className="text-text-muted text-sm">UK Programs Image</p>
-                  </div>
+                <div className="absolute inset-4 bg-white rounded-xl shadow-lg overflow-hidden">
+                  <Image
+                    src="/images/uk-programs.webp"
+                    alt="UK academic programs - books, graduation cap and diploma"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </ScrollReveal>
