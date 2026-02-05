@@ -220,9 +220,9 @@ export function Header() {
             'relative h-full flex flex-col justify-center items-center px-8 overflow-y-auto',
             isRTL && 'text-right'
           )}>
-            {/* Logo - Large and Centered */}
-            <div className="absolute top-16 left-0 right-0 flex justify-center px-12">
-              <div className="relative w-full max-w-[180px] aspect-square opacity-15">
+            {/* Logo - Large and Centered with menu links */}
+            <div className="absolute inset-0 flex justify-center items-center pointer-events-none" style={{ transform: 'translateY(-15%)' }}>
+              <div className="relative w-[85%] max-w-[400px] aspect-square opacity-10">
                 <Image
                   src="/logo/logo.png"
                   alt=""
@@ -315,7 +315,7 @@ export function Header() {
 
             {/* Bottom tagline */}
             <p
-              className="absolute bottom-12 text-sm text-text-muted/60 font-medium tracking-wide animate-fade-up"
+              className="mt-10 text-sm text-text-muted/60 font-medium tracking-wide animate-fade-up"
               style={{
                 animationDelay: `${navItems.length * 80 + 200}ms`,
                 animationFillMode: 'both'
