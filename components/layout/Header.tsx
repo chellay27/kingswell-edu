@@ -52,15 +52,18 @@ export function Header() {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll and set data attribute when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.setAttribute('data-mobile-menu-open', 'true');
     } else {
       document.body.style.overflow = '';
+      document.body.removeAttribute('data-mobile-menu-open');
     }
     return () => {
       document.body.style.overflow = '';
+      document.body.removeAttribute('data-mobile-menu-open');
     };
   }, [isMobileMenuOpen]);
 
@@ -117,8 +120,8 @@ export function Header() {
           'flex items-center gap-4',
           isRTL && 'flex-row-reverse'
         )}>
-          {/* Language Switcher */}
-          <div className="relative" ref={langMenuRef}>
+          {/* Language Switcher - Desktop Only */}
+          <div className="relative hidden lg:block" ref={langMenuRef}>
             <button
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
               className={cn(
@@ -180,113 +183,146 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => setIsMobileMenuOpen(true)}
             className="lg:hidden p-2 text-primary hover:bg-primary/5 rounded-lg transition-colors"
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-label="Open menu"
           >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            <Menu className="w-6 h-6" />
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu - Full Page */}
-      <div
-        className={cn(
-          'lg:hidden fixed inset-0 bg-cream z-40',
-          'transition-all duration-500 ease-out',
-          isMobileMenuOpen
-            ? 'opacity-100 pointer-events-auto'
-            : 'opacity-0 pointer-events-none'
-        )}
-      >
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <div className="absolute top-20 right-10 w-64 h-64 bg-primary rounded-full blur-3xl" />
-          <div className="absolute bottom-32 left-10 w-48 h-48 bg-accent rounded-full blur-3xl" />
-        </div>
+      {/* Mobile Menu - Full Page Overlay */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-[60] bg-cream">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+            <div className="absolute top-20 right-10 w-64 h-64 bg-primary rounded-full blur-3xl" />
+            <div className="absolute bottom-32 left-10 w-48 h-48 bg-accent rounded-full blur-3xl" />
+          </div>
 
-        <div className={cn(
-          'relative h-full flex flex-col justify-center items-center px-8',
-          isRTL && 'text-right'
-        )}>
-          {/* Logo in center top */}
-          <div className="absolute top-24 left-1/2 -translate-x-1/2">
-            <div className="relative w-16 h-16 opacity-20">
-              <Image
-                src="/logo/logo.png"
-                alt=""
-                fill
-                className="object-contain"
-                aria-hidden="true"
-              />
+          {/* Close Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={cn(
+              'absolute top-5 z-10 p-2 text-primary hover:bg-primary/5 rounded-lg transition-colors',
+              isRTL ? 'left-4' : 'right-4'
+            )}
+            aria-label="Close menu"
+          >
+            <X className="w-7 h-7" />
+          </button>
+
+          <div className={cn(
+            'relative h-full flex flex-col justify-center items-center px-8',
+            isRTL && 'text-right'
+          )}>
+            {/* Logo - Large and Centered */}
+            <div className="absolute top-16 left-0 right-0 flex justify-center px-12">
+              <div className="relative w-full max-w-[180px] aspect-square opacity-15">
+                <Image
+                  src="/logo/logo.png"
+                  alt=""
+                  fill
+                  className="object-contain"
+                  aria-hidden="true"
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Navigation Links */}
-          <nav className="flex flex-col items-center gap-2">
-            {navItems.map((item, index) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  'relative py-3 px-6 text-2xl font-display font-semibold',
-                  'transition-all duration-300',
-                  pathname === item.href
-                    ? 'text-accent'
-                    : 'text-primary hover:text-accent',
-                  isMobileMenuOpen && 'animate-fade-up'
-                )}
-                style={{
-                  animationDelay: `${index * 80}ms`,
-                  animationFillMode: 'both'
-                }}
-              >
-                {t(item.labelKey)}
-                {pathname === item.href && (
-                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-accent rounded-full" />
-                )}
-              </Link>
-            ))}
-          </nav>
+            {/* Navigation Links */}
+            <nav className="flex flex-col items-center gap-2">
+              {navItems.map((item, index) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={cn(
+                    'relative py-3 px-6 text-2xl font-display font-semibold',
+                    'transition-all duration-300 animate-fade-up',
+                    pathname === item.href
+                      ? 'text-accent'
+                      : 'text-primary hover:text-accent'
+                  )}
+                  style={{
+                    animationDelay: `${index * 80}ms`,
+                    animationFillMode: 'both'
+                  }}
+                >
+                  {t(item.labelKey)}
+                  {pathname === item.href && (
+                    <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-accent rounded-full" />
+                  )}
+                </Link>
+              ))}
+            </nav>
 
-          {/* CTA Button */}
-          <div
-            className={cn(
-              'mt-12',
-              isMobileMenuOpen && 'animate-fade-up'
-            )}
-            style={{
-              animationDelay: `${navItems.length * 80 + 100}ms`,
-              animationFillMode: 'both'
-            }}
-          >
-            <Link
-              href="/contact"
-              className="btn-primary text-lg px-10 py-4"
+            {/* CTA Button */}
+            <div
+              className="mt-12 animate-fade-up"
+              style={{
+                animationDelay: `${navItems.length * 80 + 100}ms`,
+                animationFillMode: 'both'
+              }}
             >
-              {t('contact')}
-            </Link>
-          </div>
+              <Link
+                href="/contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="btn-primary text-lg px-10 py-4"
+              >
+                {t('contact')}
+              </Link>
+            </div>
 
-          {/* Bottom tagline */}
-          <p
-            className={cn(
-              'absolute bottom-12 text-sm text-text-muted/60 font-medium tracking-wide',
-              isMobileMenuOpen && 'animate-fade-up'
-            )}
-            style={{
-              animationDelay: `${navItems.length * 80 + 200}ms`,
-              animationFillMode: 'both'
-            }}
-          >
-            Education Without Boundaries
-          </p>
+            {/* Language Switcher - Mobile */}
+            <div
+              className="mt-8 flex items-center gap-4 animate-fade-up"
+              style={{
+                animationDelay: `${navItems.length * 80 + 150}ms`,
+                animationFillMode: 'both'
+              }}
+            >
+              <Link
+                href={pathname}
+                locale="en"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={cn(
+                  'px-4 py-2 rounded-full text-sm font-medium transition-colors',
+                  locale === 'en'
+                    ? 'bg-primary text-white'
+                    : 'bg-primary/10 text-primary hover:bg-primary/20'
+                )}
+              >
+                English
+              </Link>
+              <Link
+                href={pathname}
+                locale="ar"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={cn(
+                  'px-4 py-2 rounded-full text-sm font-medium font-arabic transition-colors',
+                  locale === 'ar'
+                    ? 'bg-primary text-white'
+                    : 'bg-primary/10 text-primary hover:bg-primary/20'
+                )}
+              >
+                العربية
+              </Link>
+            </div>
+
+            {/* Bottom tagline */}
+            <p
+              className="absolute bottom-12 text-sm text-text-muted/60 font-medium tracking-wide animate-fade-up"
+              style={{
+                animationDelay: `${navItems.length * 80 + 200}ms`,
+                animationFillMode: 'both'
+              }}
+            >
+              Education Without Boundaries
+            </p>
+          </div>
         </div>
-      </div>
+      )}
     </header>
   );
 }

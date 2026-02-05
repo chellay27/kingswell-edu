@@ -155,6 +155,11 @@
     animation: pulseGlow 4s ease-in-out infinite;
   }
 
+  /* Hide WhatsApp button when mobile menu is open */
+  body[data-mobile-menu-open="true"] .pulse-glow {
+    @apply opacity-0 pointer-events-none;
+  }
+
   /* Section title gold accent */
   .title-accent {
     position: relative;
