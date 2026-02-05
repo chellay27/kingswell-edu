@@ -194,7 +194,10 @@ export function Header() {
 
       {/* Mobile Menu - Full Page Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-[60] bg-cream">
+        <div
+          className="lg:hidden fixed top-0 left-0 right-0 bottom-0 z-[60] bg-cream overflow-hidden"
+          style={{ height: '100dvh', minHeight: '100vh' }}
+        >
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
             <div className="absolute top-20 right-10 w-64 h-64 bg-primary rounded-full blur-3xl" />
@@ -214,7 +217,7 @@ export function Header() {
           </button>
 
           <div className={cn(
-            'relative h-full flex flex-col justify-center items-center px-8',
+            'relative h-full flex flex-col justify-center items-center px-8 overflow-y-auto',
             isRTL && 'text-right'
           )}>
             {/* Logo - Large and Centered */}
